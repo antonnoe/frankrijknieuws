@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="nl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;background:#fff;color:#000;font-family:Inter,Arial,Helvetica,sans-serif;">
+  <div style="box-sizing:border-box;padding:12px;max-width:360px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;">
+      <div style="font-weight:800;">Frankrijk nieuws</div>
+      <span style="font-size:10px;color:{{brand}};border:1px solid {{brand}};border-radius:999px;padding:2px 6px;">{{date_label}}</span>
+    </div>
+    <ul style="margin:0 0 6px 18px;padding:0;">
+      {% for it in items %}
+        <li style="margin:0 0 6px 0;">
+          <a href="{{it.link}}" style="color:#000;text-decoration:none;border-bottom:1px solid {{brand}};">{{it.title}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <div style="text-align:right;">
+      <a href="{{channel_link}}" style="font-size:11px;color:{{brand}};text-decoration:none;border-bottom:1px solid {{brand}};">Meer ›</a>
+    </div>
+  </div>
+</body>
+</html>
