@@ -1,0 +1,6 @@
+https://infofrankrijk.com/feed/
+https://www.nederlanders.fr/profiles/blog/feed?xn_auth=no
+https://www.nederlanders.fr/profiles/blog/feed?tag=Woningen+Aangeboden&xn_auth=no
+https://www.service-public.fr/rss/actualites.rss
+https://www.gouvernement.fr/actualites/rss.xml
+https://www.insee.fr/fr/actualites/actualites.rss
