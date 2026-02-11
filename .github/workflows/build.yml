@@ -1,0 +1,34 @@
+name: Build Frankrijk Nieuws
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "10 6 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install feedparser jinja2
+
+      - name: Run script
+        run: python build_feed.py
+
+      - name: Commit results
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            git config user.name "frankrijknieuws-bot"
+            git config user.email "bot@example.com"
+            git add -A
+            git commit -m "Daily build"
+            git push
+          fi
