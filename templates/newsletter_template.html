@@ -1,0 +1,42 @@
+<div style="box-sizing:border-box;margin:0 auto;max-width:600px;background:#ffffff;color:#000;
+            font-family:Inter,Arial,Helvetica,sans-serif;line-height:1.6;
+            padding:20px;border:1px solid #eee;border-radius:10px;">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;">
+    <div style="display:flex;align-items:center;gap:10px;">
+      {% if logoinfo %}<img src="{{logoinfo}}" alt="Infofrankrijk.com" style="height:34px;max-width:200px;">{% endif %}
+      <div style="width:1px;height:28px;background:{{brand}};opacity:.6;"></div>
+      {% if logonlfr %}<img src="{{logonlfr}}" alt="Nederlanders.fr" style="height:34px;max-width:200px;">{% endif %}
+    </div>
+    <span style="font-size:11px;font-weight:700;color:{{brand}};border:1px solid {{brand}};border-radius:999px;padding:6px 10px;">
+      {{date_label}}
+    </span>
+  </div>
+
+  {% for key, label in [("vastgoed","Vastgoed (nieuw)"),
+                        ("praktisch","Praktisch (overheid & regels)"),
+                        ("weer","Weer & veiligheid"),
+                        ("reizen","Reizen & verkeer"),
+                        ("zakelijk","Ondernemen & economie"),
+                        ("actualiteiten","Actualiteiten"),
+                        ("community","Nieuw op Nederlanders.fr (laatste 24 uur)")] %}
+    {% if groups[key] %}
+      <h2 style="margin:14px 0 8px 0;font-size:18px;font-weight:800;color:{{brand}};">{{label}}</h2>
+      <ul style="margin:0 0 12px 20px;padding:0;">
+        {% for it in groups[key] %}
+          <li style="margin-bottom:6px;">
+            <a href="{{it.link}}" style="color:#000;text-decoration:none;border-bottom:1px solid {{brand}};">{{it.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endfor %}
+
+  <div style="height:1px;background:#e8e8e8;margin:12px 0;"></div>
+
+  {{ static_block }}
+
+  <p style="margin:12px 0 0 0;font-size:11px;color:#666;">
+    Lees meer: <a href="{{channel_link}}" style="color:{{brand}};text-decoration:none;border-bottom:1px solid {{brand}};">{{channel_link}}</a>
+  </p>
+</div>
