@@ -9,6 +9,9 @@ from datetime import datetime, timezone, timedelta
 from urllib.parse import urlparse
 
 import feedparser
+import socket
+socket.setdefaulttimeout(10)
+
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 # ------------------------------------------------------------
