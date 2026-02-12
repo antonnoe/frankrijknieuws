@@ -36,7 +36,7 @@ LOGO_NLFR   = "https://lh3.googleusercontent.com/sitesv/APaQ0ST5vu1favwXFJYhaSPS
 BRAND_COLOR = "#800000"
 
 # Nieuwsregels
-FRESHNESS_HOURS        = 36   # algemeen nieuws max 36 uur oud
+FRESHNESS_HOURS        = 72   # algemeen nieuws max 72 uur oud
 QUIET_DAY_MODE         = "micro"   # 'micro' of 'skip'
 MIN_ITEMS_FOR_FULL     = 4
 MAX_TOTAL_ITEMS        = 8
