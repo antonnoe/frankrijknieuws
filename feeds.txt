@@ -1,3 +1,9 @@
+https://www.nederlanders.fr/profiles/blog/feed?xn_auth=no
+https://www.nederlanders.fr/profiles/blog/feed?tag=Woningen+Aangeboden&xn_auth=no
+https://infofrankrijk.com/feed/
+https://www.francetvinfo.fr/titres.rss
+https://www.lemonde.fr/rss/une.xml
+https://www.lesechos.fr/rss/rss_une.xml
 https://infofrankrijk.com/feed/
 https://www.nederlanders.fr/profiles/blog/feed?xn_auth=no
 https://www.nederlanders.fr/profiles/blog/feed?tag=Woningen+Aangeboden&xn_auth=no
