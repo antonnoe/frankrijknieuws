@@ -23,12 +23,19 @@ jobs:
       - name: Run script
         run: python build_feed.py
 
-      - name: Commit results
+            - name: Commit results
         run: |
+          set -e
           if [[ -n $(git status --porcelain) ]]; then
             git config user.name "frankrijknieuws-bot"
             git config user.email "bot@example.com"
             git add -A
-            git commit -m "Daily build"
-            git push
+            git commit -m "Daily build" || true
+
+            # Pull remote changes to avoid non-fast-forward push failures
+            git pull --rebase origin main
+
+            # Push (retry once in case another run pushed in-between)
+            git push origin main || (sleep 2 && git pull --rebase origin main && git push origin main)
           fi
+
